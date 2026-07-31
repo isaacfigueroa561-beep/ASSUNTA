@@ -1,0 +1,27 @@
+kind = "web"
+previewPath = "/"
+title = "Assunta — Heritage Italian Recipes"
+version = "1.0.0"
+id = "artifacts/assunta"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 23783
+
+[services.development]
+run = "pnpm --filter @workspace/assunta run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/assunta", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/assunta/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "23783"
+BASE_PATH = "/"
