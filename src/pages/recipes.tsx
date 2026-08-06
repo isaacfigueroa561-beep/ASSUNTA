@@ -7,16 +7,14 @@ import { recipes, Recipe } from '@/data/recipes';
 import { Clock, Users, Search, X } from 'lucide-react';
 import { AnimatedThumbnail } from '@/components/AnimatedThumbnail';
 
-const categories = ['all', 'pasta', 'sauce', 'soup', 'secondi', 'dolci'] as const;
+const categories = ['all', 'pasta', 'sauce', 'secondi'] as const;
 type Category = typeof categories[number];
 
 const categoryLabels: Record<Category, string> = {
   all: 'All',
   pasta: 'Pasta',
   sauce: 'Sauce',
-  soup: 'Soup',
   secondi: 'Secondi',
-  dolci: 'Dolci',
 };
 
 function HighlightText({ text, query }: { text: string; query: string }) {

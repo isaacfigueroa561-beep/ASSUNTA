@@ -74,7 +74,7 @@ export default function About() {
             {/* Bologna, 1971 */}
             <FadeInView className="mb-16">
               <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-6">
-                Bologna, 1971
+                Bologna, 1937
               </h2>
               <div className="prose prose-lg max-w-none">
                 <p className="text-base md:text-lg font-sans text-foreground leading-relaxed mb-4">
@@ -123,8 +123,8 @@ export default function About() {
             {/* Image with parallax reveal */}
             <FadeInView y={20} className="my-16 rounded-sm overflow-hidden">
               <motion.img
-                src="https://images.unsplash.com/photo-1608877907149-a206d75ba011?w=1200&h=675&fit=crop"
-                alt="Italian kitchen"
+                src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=1200&h=675&fit=crop"
+                alt="Fresh tagliatelle with slow-simmered ragù"
                 className="w-full h-64 md:h-96 object-cover"
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.5, ease: 'easeOut' }}
@@ -156,13 +156,13 @@ export default function About() {
               </h2>
               <div className="prose prose-lg max-w-none">
                 <p className="text-base md:text-lg font-sans text-foreground leading-relaxed mb-4">
-                  Assunta passed away in 2003, but her sauce lives on. Today, you can find it at Costco stores across the country: authentic Bolognese ragù made exactly as she made it on those Sunday mornings in Bologna. The recipe hasn't changed. The three-hour simmer remains non-negotiable.
+                  Assunta's sauce lives on. Today, you can find Assunta's Creamy Alfredo at Costco: a super-premium alfredo sauce made with fresh cream, aged Parmigiano Reggiano and real butter. The standard hasn't changed. The finest quality ingredients remain non-negotiable.
                 </p>
                 <p className="text-base md:text-lg font-sans text-foreground leading-relaxed mb-4">
                   Every jar carries her name and her legacy. It's a reminder that good food doesn't have to be complicated, but it does have to be made with care.
                 </p>
                 <p className="text-base md:text-lg font-sans text-foreground leading-relaxed">
-                  When you open a jar of Assunta's ragù and smell that rich, slow-cooked aroma, you're connecting to a tradition that spans generations: a small kitchen in Bologna, a woman who believed that cooking with love was the only way worth cooking at all.
+                  When you open a jar of Assunta's Creamy Alfredo and smell that rich, velvety aroma, you're connecting to a tradition that spans generations: a woman who believed that cooking with love was the only way worth cooking at all.
                 </p>
               </div>
             </FadeInView>
@@ -174,7 +174,7 @@ export default function About() {
                   Try the Original
                 </h3>
                 <p className="text-base font-sans text-muted-foreground mb-6 max-w-2xl mx-auto">
-                  Experience Assunta's legendary ragù for yourself. Start with the recipe that started it all.
+                  Experience Assunta's Creamy Alfredo for yourself. Start with the sauce that started it all.
                 </p>
                 <Button
                   asChild
@@ -182,7 +182,7 @@ export default function About() {
                   className="bg-primary text-primary-foreground hover:bg-primary/90 font-sans font-bold"
                   data-testid="button-try-original-recipe"
                 >
-                  <Link href="/recipes/ragu-bolognese">View the Recipe</Link>
+                  <Link href="/recipes/creamy-alfredo-sauce">View the Recipe</Link>
                 </Button>
               </div>
             </FadeInView>

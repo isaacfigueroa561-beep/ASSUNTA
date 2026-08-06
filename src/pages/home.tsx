@@ -82,10 +82,10 @@ export default function Home() {
               }}
             >
               <motion.p
-                className="text-xs sm:text-sm font-sans font-bold uppercase tracking-[0.3em] text-accent mb-6"
+                className="text-xs sm:text-sm font-sans font-bold uppercase tracking-[0.3em] text-accent-light mb-6"
                 variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } } }}
               >
-                Authentic Italian Heritage Since 1971
+                Authentic Italian Heritage Since 1937
               </motion.p>
               <motion.h1
                 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-serif font-bold text-primary-foreground mb-6 leading-tight"
@@ -97,7 +97,7 @@ export default function Home() {
                 className="text-lg sm:text-xl md:text-2xl font-sans text-primary-foreground/90 mb-10 max-w-2xl mx-auto"
                 variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } } }}
               >
-                From Bologna, 1971. The sauce that became a legacy.
+                Since 1937. The sauce that became a legacy.
               </motion.p>
               <motion.div
                 className="flex flex-col sm:flex-row gap-4 justify-center"
@@ -210,8 +210,8 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
               {[
                 { icon: Timer, title: 'Slow-Cooked', body: 'Every batch simmers for hours, never rushed. Patience is the secret ingredient.' },
-                { icon: Heart, title: 'Family Recipe', body: "Assunta's original 1971 recipe, preserved exactly as she made it." },
-                { icon: Users, title: 'Italian Tradition', body: 'Authentic Bolognese methods passed down through generations.' },
+                { icon: Heart, title: 'Family Recipe', body: "Assunta's original 1937 recipe, preserved exactly as she made it." },
+                { icon: Users, title: 'Italian Tradition', body: 'Authentic Italian methods passed down through generations.' },
               ].map(({ icon: Icon, title, body }, i) => (
                 <FadeInView key={title} delay={i * 0.14}>
                   <motion.div

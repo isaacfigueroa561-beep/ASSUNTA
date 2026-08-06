@@ -1,7 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap');
 @import 'tailwindcss';
 @import 'tw-animate-css';
 @plugin "@tailwindcss/typography";
+
+@font-face {
+  font-family: 'Lyyra Extended';
+  src: url('/fonts/LyyraExtended-Regular.otf') format('opentype');
+  font-weight: 400 700;
+  font-display: swap;
+}
 
 @custom-variant dark (&:is(.dark *));
 
@@ -35,6 +41,7 @@
   --color-accent: hsl(var(--accent));
   --color-accent-foreground: hsl(var(--accent-foreground));
   --color-accent-border: var(--accent-border);
+  --color-accent-light: hsl(var(--accent-light));
 
   --color-destructive: hsl(var(--destructive));
   --color-destructive-foreground: hsl(var(--destructive-foreground));
@@ -79,52 +86,57 @@
   --elevate-1: rgba(0, 0, 0, 0.03);
   --elevate-2: rgba(0, 0, 0, 0.08);
 
-  --background: 36 39% 96%;
-  --foreground: 20 15% 15%;
-  --border: 36 20% 82%;
+  --background: 40 40% 94%;
+  --foreground: 34 38% 12%;
+  --border: 40 22% 80%;
 
-  --card: 36 30% 93%;
-  --card-foreground: 20 15% 15%;
-  --card-border: 36 20% 82%;
+  --card: 40 34% 91%;
+  --card-foreground: 34 38% 12%;
+  --card-border: 40 22% 80%;
 
-  --sidebar: 36 30% 93%;
-  --sidebar-foreground: 20 15% 15%;
-  --sidebar-border: 36 20% 82%;
-  --sidebar-primary: 0 65% 35%;
-  --sidebar-primary-foreground: 36 50% 97%;
-  --sidebar-accent: 75 20% 40%;
-  --sidebar-accent-foreground: 36 50% 97%;
-  --sidebar-ring: 0 65% 35%;
+  --sidebar: 40 34% 91%;
+  --sidebar-foreground: 34 38% 12%;
+  --sidebar-border: 40 22% 80%;
+  --sidebar-primary: 34 38% 25%;
+  --sidebar-primary-foreground: 40 44% 96%;
+  --sidebar-accent: 43 60% 35%;
+  --sidebar-accent-foreground: 40 44% 96%;
+  --sidebar-ring: 34 38% 25%;
 
-  --popover: 36 30% 93%;
-  --popover-foreground: 20 15% 15%;
-  --popover-border: 36 20% 82%;
+  --popover: 40 34% 91%;
+  --popover-foreground: 34 38% 12%;
+  --popover-border: 40 22% 80%;
 
-  --primary: 0 65% 35%;
-  --primary-foreground: 36 50% 97%;
+  /* Deep olive — the brand's primary. Swapped from tomato-red (ragù era) to suit the Creamy Alfredo product. */
+  --primary: 34 38% 25%;
+  --primary-foreground: 40 44% 96%;
 
-  --secondary: 75 20% 40%;
-  --secondary-foreground: 36 50% 97%;
+  --secondary: 43 60% 35%;
+  --secondary-foreground: 40 44% 96%;
 
-  --muted: 36 20% 90%;
-  --muted-foreground: 20 10% 45%;
+  /* Lightness lowered from the source build's 46% (3.76:1, fails WCAG AA) to clear 4.5:1 on both background and card. */
+  --muted: 40 22% 88%;
+  --muted-foreground: 34 20% 36%;
 
-  --accent: 38 75% 55%;
-  --accent-foreground: 20 15% 15%;
+  /* Lightness raised from the source build's 42% so accent-foreground text clears 4.5:1 (was 3.55:1). */
+  --accent: 40 50% 46%;
+  --accent-foreground: 34 38% 12%;
+  /* Pale gold for small text set directly over the dark hero video/overlay (was reusing --accent at 2.44:1; this clears 6:1). */
+  --accent-light: 40 60% 78%;
 
   --destructive: 0 65% 45%;
-  --destructive-foreground: 36 50% 97%;
+  --destructive-foreground: 40 44% 96%;
 
-  --input: 36 20% 82%;
-  --ring: 0 65% 35%;
-  --chart-1: 0 65% 35%;
-  --chart-2: 38 75% 55%;
-  --chart-3: 75 20% 40%;
-  --chart-4: 20 15% 15%;
-  --chart-5: 36 20% 90%;
+  --input: 40 22% 80%;
+  --ring: 34 38% 25%;
+  --chart-1: 34 38% 25%;
+  --chart-2: 40 50% 42%;
+  --chart-3: 43 60% 35%;
+  --chart-4: 34 38% 12%;
+  --chart-5: 40 22% 88%;
 
-  --app-font-sans: 'Lato', sans-serif;
-  --app-font-serif: 'Playfair Display', serif;
+  --app-font-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --app-font-serif: 'Lyyra Extended', serif;
   --app-font-mono: Menlo, monospace;
   --radius: 0.5rem;
   --shadow-2xs: 0px 1px 2px 0px hsl(20 15% 15% / 0.05);
@@ -221,36 +233,37 @@
   --sidebar: 20 15% 13%;
   --sidebar-foreground: 36 39% 96%;
   --sidebar-border: 20 10% 25%;
-  --sidebar-primary: 0 65% 45%;
-  --sidebar-primary-foreground: 36 50% 97%;
-  --sidebar-accent: 75 20% 50%;
-  --sidebar-accent-foreground: 36 50% 97%;
-  --sidebar-ring: 0 65% 45%;
+  --sidebar-primary: 40 45% 55%;
+  --sidebar-primary-foreground: 34 38% 12%;
+  --sidebar-accent: 43 55% 55%;
+  --sidebar-accent-foreground: 34 38% 12%;
+  --sidebar-ring: 40 45% 55%;
 
   --popover: 20 15% 13%;
   --popover-foreground: 36 39% 96%;
   --popover-border: 20 10% 25%;
 
-  --primary: 0 65% 45%;
-  --primary-foreground: 36 50% 97%;
+  --primary: 40 45% 55%;
+  --primary-foreground: 34 38% 12%;
 
-  --secondary: 75 20% 50%;
-  --secondary-foreground: 36 50% 97%;
+  --secondary: 43 55% 55%;
+  --secondary-foreground: 34 38% 12%;
 
   --muted: 20 10% 20%;
-  --muted-foreground: 36 20% 65%;
+  --muted-foreground: 36 20% 68%;
 
-  --accent: 38 75% 60%;
-  --accent-foreground: 20 15% 15%;
+  --accent: 40 55% 58%;
+  --accent-foreground: 34 38% 12%;
+  --accent-light: 40 60% 78%;
 
   --destructive: 0 65% 50%;
   --destructive-foreground: 36 50% 97%;
 
   --input: 20 10% 25%;
-  --ring: 0 65% 45%;
-  --chart-1: 0 65% 45%;
-  --chart-2: 38 75% 60%;
-  --chart-3: 75 20% 50%;
+  --ring: 40 45% 55%;
+  --chart-1: 40 45% 55%;
+  --chart-2: 40 55% 58%;
+  --chart-3: 43 55% 55%;
   --chart-4: 36 39% 96%;
   --chart-5: 20 10% 20%;
 
@@ -422,23 +435,4 @@
   .recipe-card-link:hover::before {
     transform: translateX(0);
   }
-}
-
-/* Recipe card link — underline slides in from left on hover */
-.recipe-card-link {
-  position: relative;
-  display: inline-block;
-}
-.recipe-card-link::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 1.5px;
-  background-color: hsl(var(--primary));
-  transition: width 0.28s ease;
-}
-.recipe-card-link:hover::after {
-  width: 100%;
 }
