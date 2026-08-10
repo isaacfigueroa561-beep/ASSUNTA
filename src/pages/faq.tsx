@@ -2,6 +2,8 @@ import { motion } from 'framer-motion';
 import { Link } from 'wouter';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
+import { useDocumentMeta } from '@/hooks/use-document-meta';
+import { PageBreadcrumb } from '@/components/PageBreadcrumb';
 
 const faqs = [
   {
@@ -23,9 +25,14 @@ const faqs = [
 ];
 
 export default function Faq() {
+  useDocumentMeta(
+    'FAQ',
+    'Everything you need to know about Assunta\'s Creamy Alfredo — where to buy, ingredients, storage, and allergens.'
+  );
   return (
     <div className="min-h-[100dvh] flex flex-col">
       <Header />
+      <PageBreadcrumb items={[{ label: 'FAQ' }]} />
 
       <main className="flex-1 py-12 md:py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">

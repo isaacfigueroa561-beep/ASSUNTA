@@ -6,6 +6,8 @@ import { Footer } from '@/components/Footer';
 import { recipes, Recipe } from '@/data/recipes';
 import { Clock, Users, Search, X } from 'lucide-react';
 import { AnimatedThumbnail } from '@/components/AnimatedThumbnail';
+import { useDocumentMeta } from '@/hooks/use-document-meta';
+import { PageBreadcrumb } from '@/components/PageBreadcrumb';
 
 const categories = ['all', 'pasta', 'sauce', 'secondi'] as const;
 type Category = typeof categories[number];
@@ -103,6 +105,10 @@ function RecipeCard({ recipe, index, query, matchedIngredient }: { recipe: Recip
 }
 
 export default function Recipes() {
+  useDocumentMeta(
+    'Recipes',
+    'Recipes crafted around Assunta\'s Creamy Alfredo — from the classic fettuccine to baked chicken alfredo.'
+  );
   const [selectedCategory, setSelectedCategory] = useState<Category>('all');
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -131,6 +137,7 @@ export default function Recipes() {
   return (
     <div className="min-h-[100dvh] flex flex-col">
       <Header />
+      <PageBreadcrumb items={[{ label: 'Recipes' }]} />
 
       <main className="flex-1 py-12 md:py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">

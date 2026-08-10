@@ -7,6 +7,7 @@ import { Footer } from '@/components/Footer';
 import { recipes } from '@/data/recipes';
 import { Button } from '@/components/ui/button';
 import { AnimatedThumbnail } from '@/components/AnimatedThumbnail';
+import { useDocumentMeta } from '@/hooks/use-document-meta';
 
 // Reusable scroll-reveal wrapper
 function FadeInView({
@@ -36,6 +37,10 @@ function FadeInView({
 }
 
 export default function Home() {
+  useDocumentMeta(
+    'Heritage Italian Recipes',
+    'Assunta\'s Creamy Alfredo: a super-premium sauce made with fresh cream, aged Parmigiano Reggiano, and real butter. Exclusively at Costco.'
+  );
   const featuredRecipes = recipes.filter((recipe) => recipe.featured);
   const heroRef = useRef(null);
   const { scrollYProgress } = useScroll({ target: heroRef, offset: ['start start', 'end start'] });

@@ -3,6 +3,8 @@ import { Link } from 'wouter';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { Button } from '@/components/ui/button';
+import { useDocumentMeta } from '@/hooks/use-document-meta';
+import { PageBreadcrumb } from '@/components/PageBreadcrumb';
 
 const ingredients = [
   {
@@ -20,9 +22,14 @@ const ingredients = [
 ];
 
 export default function Product() {
+  useDocumentMeta(
+    'Creamy Alfredo Sauce',
+    'A super-premium alfredo sauce made with fresh cream, aged Parmigiano Reggiano PDO, and real butter. 2pk – 22oz, exclusively at Costco.'
+  );
   return (
     <div className="min-h-[100dvh] flex flex-col">
       <Header />
+      <PageBreadcrumb items={[{ label: 'Product' }]} />
 
       <main className="flex-1">
         {/* Hero */}

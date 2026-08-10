@@ -4,6 +4,8 @@ import { Link } from 'wouter';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { Button } from '@/components/ui/button';
+import { useDocumentMeta } from '@/hooks/use-document-meta';
+import { PageBreadcrumb } from '@/components/PageBreadcrumb';
 
 function FadeInView({
   children,
@@ -32,9 +34,14 @@ function FadeInView({
 }
 
 export default function About() {
+  useDocumentMeta(
+    'Our Story',
+    'Bologna, 1937: the story of Assunta Moretti and the recipe that became Assunta\'s Creamy Alfredo.'
+  );
   return (
     <div className="min-h-[100dvh] flex flex-col">
       <Header />
+      <PageBreadcrumb items={[{ label: 'About' }]} />
 
       <main className="flex-1">
         {/* Hero */}

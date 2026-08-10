@@ -24,6 +24,8 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { useToast } from '@/hooks/use-toast';
+import { useDocumentMeta } from '@/hooks/use-document-meta';
+import { PageBreadcrumb } from '@/components/PageBreadcrumb';
 
 const contactFormSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
@@ -35,6 +37,10 @@ const contactFormSchema = z.object({
 type ContactFormValues = z.infer<typeof contactFormSchema>;
 
 export default function Contact() {
+  useDocumentMeta(
+    'Contact',
+    'Get in touch with Assunta — questions, wholesale, press, or feedback about Creamy Alfredo.'
+  );
   const { toast } = useToast();
 
   const form = useForm<ContactFormValues>({
@@ -59,6 +65,7 @@ export default function Contact() {
   return (
     <div className="min-h-[100dvh] flex flex-col">
       <Header />
+      <PageBreadcrumb items={[{ label: 'Contact' }]} />
 
       <main className="flex-1 py-12 md:py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">

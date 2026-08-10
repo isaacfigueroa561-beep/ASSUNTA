@@ -5,6 +5,8 @@ import { ArrowLeft, Clock, Users, ChefHat, Check, Minus, Plus } from 'lucide-rea
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { recipes } from '@/data/recipes';
+import { useDocumentMeta } from '@/hooks/use-document-meta';
+import { PageBreadcrumb } from '@/components/PageBreadcrumb';
 
 // ─── Ingredient scaling helpers ──────────────────────────────────────────────
 
@@ -163,12 +165,18 @@ export default function RecipeDetail() {
   const slug = params.slug;
   const recipe = recipes.find((r) => r.slug === slug);
 
+  useDocumentMeta(
+    recipe ? recipe.title : 'Recipe Not Found',
+    recipe ? recipe.description : 'The recipe you\'re looking for doesn\'t exist.'
+  );
+
   const [currentServings, setCurrentServings] = useState(recipe?.servings ?? 4);
 
   if (!recipe) {
     return (
       <div className="min-h-[100dvh] flex flex-col">
         <Header />
+        <PageBreadcrumb items={[{ label: 'Recipes', href: '/recipes' }, { label: 'Not Found' }]} />
         <main className="flex-1 flex items-center justify-center py-12">
           <div className="text-center">
             <h1 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-4">Recipe Not Found</h1>
@@ -193,6 +201,7 @@ export default function RecipeDetail() {
   return (
     <div className="min-h-[100dvh] flex flex-col">
       <Header />
+      <PageBreadcrumb items={[{ label: 'Recipes', href: '/recipes' }, { label: recipe.title }]} />
 
       <main className="flex-1">
         {/* Hero */}
