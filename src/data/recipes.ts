@@ -3,7 +3,7 @@
 // ============================================================
 // Add or edit recipes here. Each recipe must have a unique slug.
 // Images should be 16:9 ratio from Unsplash or similar.
-// Categories: "pasta" | "sauce" | "secondi"
+// Categories: "pasta" | "secondi"
 // ============================================================
 
 export interface Recipe {
@@ -13,7 +13,7 @@ export interface Recipe {
   description: string;         // 1-2 sentence teaser
   image: string;               // primary Unsplash URL (also first in images[])
   images: string[];            // 1-3 images for thumbnail crossfade animation
-  category: "pasta" | "sauce" | "secondi";
+  category: "pasta" | "secondi";
   prepTime: string;            // e.g. "20 min"
   cookTime: string;            // e.g. "3 hrs"
   servings: number;
@@ -23,37 +23,6 @@ export interface Recipe {
 }
 
 export const recipes: Recipe[] = [
-  {
-    id: "1",
-    title: "Assunta's Creamy Alfredo Sauce",
-    slug: "creamy-alfredo-sauce",
-    description: "The signature sauce: fresh cream, aged Parmigiano Reggiano, and real butter, slowly brought together the way Assunta intended.",
-    image: "https://images.unsplash.com/photo-1608219992759-8d74ed8d76eb?w=1600&h=900&fit=crop",
-    images: [
-      "https://images.unsplash.com/photo-1608219992759-8d74ed8d76eb?w=800&h=450&fit=crop",
-    ],
-    category: "sauce",
-    prepTime: "10 min",
-    cookTime: "20 min",
-    servings: 6,
-    featured: true,
-    ingredients: [
-      "2 cups fresh heavy cream",
-      "1/2 cup unsalted butter (1 stick)",
-      "1 1/2 cups Parmigiano Reggiano PDO, freshly grated",
-      "2 cloves garlic, very finely minced (optional)",
-      "Freshly grated nutmeg, to taste",
-      "Sea salt and freshly ground black pepper",
-    ],
-    steps: [
-      "In a wide, heavy-bottomed pan, melt the butter over low heat. Do not let it brown — Alfredo is about sweetness and cream, not toasted notes. If using garlic, add it now and let it soften gently for one minute without coloring.",
-      "Pour in the cream and warm it slowly over medium-low heat, stirring often, until it just begins to steam and small bubbles form at the edge of the pan. Never let it come to a rolling boil; boiled cream loses its silkiness.",
-      "Remove the pan from the heat and add the Parmigiano Reggiano a handful at a time, whisking constantly. The residual heat will melt the cheese into the cream. Adding it off the heat prevents the sauce from turning grainy.",
-      "Season with a few gratings of fresh nutmeg, sea salt, and black pepper. Taste as you go — the Parmigiano brings its own salt.",
-      "Return the pan to the lowest heat and stir gently for 2-3 minutes until the sauce coats the back of a spoon. If it thickens too much, loosen it with a splash of warm cream or pasta water.",
-      "Use immediately, or hold over the lowest possible heat for up to 15 minutes, stirring occasionally. Assunta always said a proper Alfredo waits for the pasta — never the other way around.",
-    ],
-  },
   {
     id: "2",
     title: "Classic Fettuccine Alfredo",
@@ -118,6 +87,40 @@ export const recipes: Recipe[] = [
       "Transfer to a buttered baking dish. Scatter the mozzarella and Parmigiano evenly over the top.",
       "Bake for 20-25 minutes, until the cheese is melted and the edges are golden and bubbling. For a deeper crust, finish under the broiler for the final 2 minutes.",
       "Rest for 5 minutes before serving, then garnish with fresh basil or parsley. The rest allows the sauce to settle back into the pasta.",
+    ],
+  },
+  {
+    id: "4",
+    title: "Mushroom Alfredo Fettuccine",
+    slug: "mushroom-alfredo-fettuccine",
+    description: "Deeply browned cremini mushrooms folded into silky fettuccine Alfredo — an easy vegetarian dinner ready in under 30 minutes.",
+    image: "https://images.unsplash.com/photo-1608219992759-8d74ed8d76eb?w=1600&h=900&fit=crop",
+    images: [
+      "https://images.unsplash.com/photo-1608219992759-8d74ed8d76eb?w=800&h=450&fit=crop",
+    ],
+    category: "pasta",
+    prepTime: "10 min",
+    cookTime: "15 min",
+    servings: 4,
+    featured: true,
+    ingredients: [
+      "500g fresh fettuccine (or dried if unavailable)",
+      "2 cups Assunta's Creamy Alfredo",
+      "2 tablespoons olive oil",
+      "300g cremini mushrooms, sliced",
+      "2 cloves garlic, minced",
+      "1/2 cup Parmigiano Reggiano, freshly grated, plus more for serving",
+      "1/2 cup reserved pasta cooking water",
+      "Sea salt and freshly ground black pepper",
+      "Fresh parsley, chopped, for garnish",
+    ],
+    steps: [
+      "Bring a large pot of well-salted water to a boil for the fettuccine.",
+      "Heat the olive oil in a wide skillet over medium-high heat. Add the mushrooms in a single layer and let them cook undisturbed for 2-3 minutes until golden on one side, then stir and continue cooking until deeply browned all over, about 5 minutes total. Season with salt and pepper.",
+      "Add the garlic and cook for 30 seconds until fragrant. Reduce the heat to low and pour in Assunta's Creamy Alfredo, stirring to combine with the mushrooms. Let it warm gently — never let it come to a hard boil.",
+      "Meanwhile, cook the fettuccine until al dente. Reserve a cup of the starchy pasta water before draining.",
+      "Add the drained fettuccine directly to the skillet with the mushrooms and sauce. Toss over low heat, adding splashes of pasta water until the sauce turns glossy and coats every strand. Stir in the Parmigiano.",
+      "Serve immediately with extra Parmigiano, black pepper, and a scatter of parsley.",
     ],
   },
 ];

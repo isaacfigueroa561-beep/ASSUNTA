@@ -10,6 +10,8 @@ import Product from '@/pages/product';
 import About from '@/pages/about';
 import Faq from '@/pages/faq';
 import Contact from '@/pages/contact';
+import Privacy from '@/pages/privacy';
+import Terms from '@/pages/terms';
 import { StickyMobileCTA } from '@/components/StickyMobileCTA';
 
 const queryClient = new QueryClient();
@@ -24,6 +26,8 @@ function Router() {
       <Route path="/about" component={About} />
       <Route path="/faq" component={Faq} />
       <Route path="/contact" component={Contact} />
+      <Route path="/privacy" component={Privacy} />
+      <Route path="/terms" component={Terms} />
       <Route component={NotFound} />
     </Switch>
   );

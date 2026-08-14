@@ -39,7 +39,7 @@ function FadeInView({
 export default function Home() {
   useDocumentMeta(
     'Heritage Italian Recipes',
-    'Assunta\'s Creamy Alfredo: a super-premium sauce made with fresh cream, aged Parmigiano Reggiano, and real butter. Exclusively at Costco.'
+    'Assunta\'s Creamy Alfredo: a super-premium sauce made with fresh cream, aged Parmigiano Reggiano, and real butter. Available at select Costco locations.'
   );
   const featuredRecipes = recipes.filter((recipe) => recipe.featured);
   const heroRef = useRef(null);
@@ -157,9 +157,9 @@ export default function Home() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {featuredRecipes.map((recipe, index) => (
-                <FadeInView key={recipe.id} delay={index * 0.12}>
+                <FadeInView key={recipe.id} delay={index * 0.12} className="h-full">
                   <motion.article
-                    className="group bg-card border border-card-border rounded-sm overflow-hidden shadow-md"
+                    className="group bg-card border border-card-border rounded-sm overflow-hidden shadow-md h-full flex flex-col"
                     whileHover={{ y: -6, boxShadow: '0 20px 40px hsl(20 15% 15% / 0.12)' }}
                     transition={{ duration: 0.3, ease: 'easeOut' }}
                     data-testid={`card-recipe-${recipe.slug}`}
@@ -167,17 +167,17 @@ export default function Home() {
                     <div className="aspect-video overflow-hidden relative">
                       <AnimatedThumbnail images={recipe.images} alt={recipe.title} />
                     </div>
-                    <div className="p-6">
+                    <div className="p-6 flex flex-col flex-1">
                       <span className="inline-block text-xs font-sans font-bold uppercase tracking-wide text-primary mb-2">
                         {recipe.category}
                       </span>
-                      <h3 className="text-xl md:text-2xl font-serif font-semibold text-foreground mb-3 group-hover:text-primary transition-colors duration-200">
+                      <h3 className="text-xl md:text-2xl font-serif font-semibold text-foreground mb-3 line-clamp-2 group-hover:text-primary transition-colors duration-200">
                         {recipe.title}
                       </h3>
                       <p className="text-sm font-sans text-muted-foreground mb-4 line-clamp-2">
                         {recipe.description}
                       </p>
-                      <div className="flex items-center gap-4 text-xs font-sans text-muted-foreground mb-5">
+                      <div className="flex items-center gap-4 text-xs font-sans text-muted-foreground mb-5 mt-auto pt-2">
                         <span className="flex items-center gap-1">
                           <Clock size={13} />
                           {recipe.prepTime}
@@ -252,7 +252,9 @@ export default function Home() {
                 className="w-16 h-0.5 bg-accent mx-auto mb-10 origin-center"
               />
               <blockquote className="text-2xl md:text-3xl lg:text-4xl font-serif italic text-foreground leading-relaxed">
-                "She cooked with patience and love. That was the secret."
+                "She cooked with patience and love.
+                <br />
+                That was the secret."
               </blockquote>
               <motion.div
                 initial={{ scaleX: 0 }}

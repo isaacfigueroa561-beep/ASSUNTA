@@ -8,7 +8,7 @@ import { PageBreadcrumb } from '@/components/PageBreadcrumb';
 const faqs = [
   {
     question: 'Where can I purchase Assunta’s Creamy Alfredo?',
-    answer: 'Assunta’s Creamy Alfredo is available exclusively at Costco, sold as a 2pk of 22oz jars.',
+    answer: 'Assunta’s Creamy Alfredo is available at select Costco locations, sold as a 2pk of 22oz jars.',
   },
   {
     question: 'What is in the sauce?',

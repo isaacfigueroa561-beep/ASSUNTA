@@ -9,13 +9,12 @@ import { AnimatedThumbnail } from '@/components/AnimatedThumbnail';
 import { useDocumentMeta } from '@/hooks/use-document-meta';
 import { PageBreadcrumb } from '@/components/PageBreadcrumb';
 
-const categories = ['all', 'pasta', 'sauce', 'secondi'] as const;
+const categories = ['all', 'pasta', 'secondi'] as const;
 type Category = typeof categories[number];
 
 const categoryLabels: Record<Category, string> = {
   all: 'All',
   pasta: 'Pasta',
-  sauce: 'Sauce',
   secondi: 'Secondi',
 };
 
@@ -53,7 +52,7 @@ function RecipeCard({ recipe, index, query, matchedIngredient }: { recipe: Recip
     <motion.article
       ref={ref}
       layout
-      className="group bg-card border border-card-border rounded-sm overflow-hidden shadow-md"
+      className="group bg-card border border-card-border rounded-sm overflow-hidden shadow-md h-full flex flex-col"
       initial={{ opacity: 0, y: 24 }}
       animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
       exit={{ opacity: 0, scale: 0.96 }}
@@ -64,11 +63,11 @@ function RecipeCard({ recipe, index, query, matchedIngredient }: { recipe: Recip
       <div className="aspect-video overflow-hidden relative">
         <AnimatedThumbnail images={recipe.images} alt={recipe.title} />
       </div>
-      <div className="p-6">
+      <div className="p-6 flex flex-col flex-1">
         <span className="inline-block text-xs font-sans font-bold uppercase tracking-wide text-primary mb-2">
           {recipe.category}
         </span>
-        <h3 className="text-xl md:text-2xl font-serif font-semibold text-foreground mb-3 group-hover:text-primary transition-colors duration-200">
+        <h3 className="text-xl md:text-2xl font-serif font-semibold text-foreground mb-3 line-clamp-2 group-hover:text-primary transition-colors duration-200">
           <HighlightText text={recipe.title} query={query} />
         </h3>
         <p className="text-sm font-sans text-muted-foreground mb-4 line-clamp-2">
@@ -82,7 +81,7 @@ function RecipeCard({ recipe, index, query, matchedIngredient }: { recipe: Recip
             </span>
           </p>
         )}
-        <div className="flex items-center gap-4 text-xs font-sans text-muted-foreground mb-5">
+        <div className="flex items-center gap-4 text-xs font-sans text-muted-foreground mb-5 mt-auto pt-2">
           <span className="flex items-center gap-1">
             <Clock size={13} />
             {recipe.prepTime}

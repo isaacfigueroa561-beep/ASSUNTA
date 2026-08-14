@@ -15,7 +15,7 @@ export function StickyMobileCTA() {
       <div className="flex items-center justify-between gap-3 px-4 py-3">
         <p className="text-xs font-sans leading-tight">
           <span className="font-bold block">Creamy Alfredo</span>
-          <span className="text-primary-foreground/70">Exclusively at Costco</span>
+          <span className="text-primary-foreground/70">At select Costco locations</span>
         </p>
         <Button
           asChild
