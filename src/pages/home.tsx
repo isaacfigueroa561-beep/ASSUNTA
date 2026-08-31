@@ -90,7 +90,7 @@ export default function Home() {
                 className="text-xs sm:text-sm font-sans font-bold uppercase tracking-[0.3em] text-accent-light mb-6"
                 variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } } }}
               >
-                Inspired by Italian Heritage
+                Inspired by Tradition
               </motion.p>
               <motion.img
                 src="/logo-wordmark.webp"
@@ -217,7 +217,7 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
               {[
                 { icon: Heart, title: 'Inspired by Assunta', body: 'Assunta Cantisano believed a great sauce was worth doing properly. Our alfredo is made in that spirit — simple ingredients, treated with respect.' },
-                { icon: Users, title: 'In the Italian Tradition', body: 'Inspired by generations of Italian cooking, where a sauce is judged by what you leave out as much as what you put in.' },
+                { icon: Users, title: 'In the Classic Tradition', body: 'Inspired by generations of home cooking, where a sauce is judged by what you leave out as much as what you put in.' },
                 { icon: Timer, title: 'Made for the Table', body: 'Rich, balanced, and ready in the time it takes to boil pasta. Built for a real weeknight, good enough for a Sunday.' },
               ].map(({ icon: Icon, title, body }, i) => (
                 <FadeInView key={title} delay={i * 0.14}>

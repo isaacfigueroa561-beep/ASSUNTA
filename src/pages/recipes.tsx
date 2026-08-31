@@ -159,7 +159,7 @@ export default function Recipes() {
               transition={{ delay: 0.3, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
             />
             <p className="text-base md:text-lg font-sans text-muted-foreground max-w-2xl mx-auto">
-              Recipes built around Assunta's Creamy Alfredo, inspired by Italian tradition.
+              Recipes built around Assunta's Creamy Alfredo, inspired by tradition.
             </p>
           </motion.div>
 

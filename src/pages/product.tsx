@@ -18,7 +18,7 @@ const highlights = [
 const ingredients = [
   {
     title: 'Parmigiano Reggiano PDO',
-    copy: 'Certified and aged — the king of Italian cheeses gives the sauce its rich, nutty foundation.',
+    copy: 'Certified and aged — the king of cheeses gives the sauce its rich, nutty foundation.',
   },
   {
     title: 'Fresh Cream',

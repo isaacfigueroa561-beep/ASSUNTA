@@ -88,7 +88,7 @@ export default function About() {
                   She built her name on sauces made from good ingredients and honest recipes — no shortcuts, no apologies. That standard is what we inherited.
                 </p>
                 <p className="text-base md:text-lg font-sans text-foreground leading-relaxed">
-                  Assunta's Alfredo is our answer to it. Inspired by her, by Italian tradition, and by the belief that the best pasta sauces in the world are still worth chasing.
+                  Assunta's Alfredo is our answer to it. Inspired by her, by generations of home cooking, and by the belief that the best pasta sauces in the world are still worth chasing.
                 </p>
               </div>
             </FadeInView>
