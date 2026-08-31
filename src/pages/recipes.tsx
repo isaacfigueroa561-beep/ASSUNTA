@@ -3,7 +3,7 @@ import { motion, useInView, AnimatePresence, LayoutGroup } from 'framer-motion';
 import { Link } from 'wouter';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
-import { recipes, Recipe } from '@/data/recipes';
+import { recipes, Recipe, categoryLabels as recipeCategoryLabels } from '@/data/recipes';
 import { Clock, Users, Search, X } from 'lucide-react';
 import { AnimatedThumbnail } from '@/components/AnimatedThumbnail';
 import { useDocumentMeta } from '@/hooks/use-document-meta';
@@ -14,8 +14,7 @@ type Category = typeof categories[number];
 
 const categoryLabels: Record<Category, string> = {
   all: 'All',
-  pasta: 'Pasta',
-  secondi: 'Secondi',
+  ...recipeCategoryLabels,
 };
 
 function HighlightText({ text, query }: { text: string; query: string }) {
@@ -65,7 +64,7 @@ function RecipeCard({ recipe, index, query, matchedIngredient }: { recipe: Recip
       </div>
       <div className="p-6 flex flex-col flex-1">
         <span className="inline-block text-xs font-sans font-bold uppercase tracking-wide text-primary mb-2">
-          {recipe.category}
+          {recipeCategoryLabels[recipe.category]}
         </span>
         <h3 className="text-xl md:text-2xl font-serif font-semibold text-foreground mb-3 line-clamp-2 group-hover:text-primary transition-colors duration-200">
           <HighlightText text={recipe.title} query={query} />
@@ -151,7 +150,7 @@ export default function Recipes() {
               Our Collection
             </p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-foreground mb-4">
-              Le Ricette
+              Recipes
             </h1>
             <motion.div
               className="w-24 h-0.5 bg-primary mx-auto mb-5"
@@ -160,7 +159,7 @@ export default function Recipes() {
               transition={{ delay: 0.3, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
             />
             <p className="text-base md:text-lg font-sans text-muted-foreground max-w-2xl mx-auto">
-              Explore our collection of authentic Italian recipes, each one crafted with tradition and love.
+              Recipes built around Assunta's Creamy Alfredo, inspired by Italian tradition.
             </p>
           </motion.div>
 

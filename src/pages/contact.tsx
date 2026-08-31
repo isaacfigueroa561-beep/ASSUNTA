@@ -8,7 +8,7 @@ import { PageBreadcrumb } from '@/components/PageBreadcrumb';
 export default function Contact() {
   useDocumentMeta(
     'Contact',
-    'Get in touch with Assunta — questions, wholesale, press, or feedback about Creamy Alfredo.'
+    'Get in touch with Assunta\'s — questions, wholesale, press, or feedback about Creamy Alfredo.'
   );
 
   return (
@@ -49,7 +49,7 @@ export default function Contact() {
                     Where to Buy
                   </h3>
                   <p className="text-sm font-sans text-muted-foreground">
-                    Find Assunta at select Costco locations
+                    Find Assunta's at select Costco locations
                   </p>
                 </div>
               </div>
@@ -77,7 +77,7 @@ export default function Contact() {
                 </div>
               </div>
               <p className="text-sm font-sans text-foreground leading-relaxed">
-                Every jar of Assunta is made with the same care, patience, and quality ingredients that Assunta herself insisted upon. Made with love in the Italian tradition.
+                Every jar of Assunta's is made with simple ingredients, treated with respect — inspired by Assunta Cantisano's belief that a great sauce is worth doing properly.
               </p>
             </motion.div>
 
@@ -92,7 +92,7 @@ export default function Contact() {
                 "If you cook with love, people will taste it."
               </blockquote>
               <cite className="text-sm font-sans text-muted-foreground not-italic block mt-2">
-                Assunta Moretti
+                Assunta Cantisano
               </cite>
             </motion.div>
           </div>

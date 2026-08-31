@@ -22,6 +22,13 @@ export interface Recipe {
   featured?: boolean;          // if true, shown on homepage
 }
 
+// English display labels for the category keys — the site is English-only,
+// so never render `recipe.category` directly.
+export const categoryLabels: Record<Recipe['category'], string> = {
+  pasta: 'Pasta',
+  secondi: 'Mains',
+};
+
 export const recipes: Recipe[] = [
   {
     id: "2",
