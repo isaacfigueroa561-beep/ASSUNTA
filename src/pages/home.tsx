@@ -4,7 +4,7 @@ import { Link } from 'wouter';
 import { Clock, Users, Heart, Timer } from 'lucide-react';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
-import { recipes, categoryLabels } from '@/data/recipes';
+import { recipes } from '@/data/recipes';
 import { Button } from '@/components/ui/button';
 import { AnimatedThumbnail } from '@/components/AnimatedThumbnail';
 import { useDocumentMeta } from '@/hooks/use-document-meta';
@@ -38,7 +38,7 @@ function FadeInView({
 
 export default function Home() {
   useDocumentMeta(
-    'Creamy Alfredo Sauce',
+    'Heritage Italian Recipes',
     'Assunta\'s Creamy Alfredo: a super-premium sauce made with fresh cream, aged Parmigiano Reggiano, and real butter. Available at select Costco locations.'
   );
   const featuredRecipes = recipes.filter((recipe) => recipe.featured);
@@ -65,7 +65,7 @@ export default function Home() {
               loop
               playsInline
               className="w-full h-full object-cover scale-110"
-              poster="/hero-poster.jpg"
+              poster="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=1920&h=1080&fit=crop"
             >
               <source src="/assunta-hero.mp4" type="video/mp4" />
               {/* Fallback to poster image if video unsupported */}
@@ -90,16 +90,14 @@ export default function Home() {
                 className="text-xs sm:text-sm font-sans font-bold uppercase tracking-[0.3em] text-accent-light mb-6"
                 variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } } }}
               >
-                Inspired by Italian Heritage
+                Authentic Italian Heritage Since 1937
               </motion.p>
-              <motion.img
-                src="/logo-wordmark.webp"
-                alt="Assunta's"
-                width={320}
-                height={88}
-                className="h-20 sm:h-24 md:h-28 w-auto object-contain mx-auto mb-6 brightness-0 invert"
+              <motion.h1
+                className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-serif font-bold text-primary-foreground mb-6 leading-tight"
                 variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } } }}
-              />
+              >
+                La Ricetta di Assunta
+              </motion.h1>
               <motion.p
                 className="text-lg sm:text-xl md:text-2xl font-sans text-primary-foreground/90 mb-10 max-w-2xl mx-auto"
                 variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } } }}
@@ -171,7 +169,7 @@ export default function Home() {
                     </div>
                     <div className="p-6 flex flex-col flex-1">
                       <span className="inline-block text-xs font-sans font-bold uppercase tracking-wide text-primary mb-2">
-                        {categoryLabels[recipe.category]}
+                        {recipe.category}
                       </span>
                       <h3 className="text-xl md:text-2xl font-serif font-semibold text-foreground mb-3 line-clamp-2 group-hover:text-primary transition-colors duration-200">
                         {recipe.title}
@@ -209,16 +207,16 @@ export default function Home() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <FadeInView className="text-center mb-14">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-foreground mb-4">
-                The Assunta's Difference
+                The Assunta Difference
               </h2>
               <div className="w-24 h-0.5 bg-primary mx-auto" />
             </FadeInView>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
               {[
-                { icon: Heart, title: 'Inspired by Assunta', body: 'Assunta Cantisano believed a great sauce was worth doing properly. Our alfredo is made in that spirit — simple ingredients, treated with respect.' },
-                { icon: Users, title: 'In the Italian Tradition', body: 'Inspired by generations of Italian cooking, where a sauce is judged by what you leave out as much as what you put in.' },
-                { icon: Timer, title: 'Made for the Table', body: 'Rich, balanced, and ready in the time it takes to boil pasta. Built for a real weeknight, good enough for a Sunday.' },
+                { icon: Timer, title: 'Slow-Cooked', body: 'Every batch simmers for hours, never rushed. Patience is the secret ingredient.' },
+                { icon: Heart, title: 'Family Recipe', body: "Assunta's original 1937 recipe, preserved exactly as she made it." },
+                { icon: Users, title: 'Italian Tradition', body: 'Authentic Italian methods passed down through generations.' },
               ].map(({ icon: Icon, title, body }, i) => (
                 <FadeInView key={title} delay={i * 0.14}>
                   <motion.div
@@ -254,9 +252,9 @@ export default function Home() {
                 className="w-16 h-0.5 bg-accent mx-auto mb-10 origin-center"
               />
               <blockquote className="text-2xl md:text-3xl lg:text-4xl font-serif italic text-foreground leading-relaxed">
-                "A pasta sauce should taste
+                "She cooked with patience and love.
                 <br />
-                like someone cared."
+                That was the secret."
               </blockquote>
               <motion.div
                 initial={{ scaleX: 0 }}

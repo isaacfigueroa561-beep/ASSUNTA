@@ -72,7 +72,7 @@ const sections = [
 export default function Terms() {
   useDocumentMeta(
     'Terms of Use',
-    'The terms and conditions governing your use of the Assunta\'s website.'
+    'The terms and conditions governing your use of the Assunta website.'
   );
   return (
     <div className="min-h-[100dvh] flex flex-col">

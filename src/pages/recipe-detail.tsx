@@ -4,7 +4,7 @@ import { Link, useParams } from 'wouter';
 import { ArrowLeft, Clock, Users, ChefHat, Check, Minus, Plus } from 'lucide-react';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
-import { recipes, categoryLabels } from '@/data/recipes';
+import { recipes } from '@/data/recipes';
 import { useDocumentMeta } from '@/hooks/use-document-meta';
 import { PageBreadcrumb } from '@/components/PageBreadcrumb';
 
@@ -232,7 +232,7 @@ export default function RecipeDetail() {
               <Link href="/recipes" className="inline-flex items-center gap-2 text-sm font-sans font-medium text-primary-foreground/80 hover:text-primary-foreground mb-5 transition-colors" data-testid="link-back-to-recipes">
                 <ArrowLeft size={16} /> Back to Recipes
               </Link>
-              <span className="block text-xs font-sans font-bold uppercase tracking-wide text-accent mb-3">{categoryLabels[recipe.category]}</span>
+              <span className="block text-xs font-sans font-bold uppercase tracking-wide text-accent mb-3">{recipe.category}</span>
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-primary-foreground leading-tight">
                 {recipe.title}
               </h1>
