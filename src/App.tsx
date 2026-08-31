@@ -12,6 +12,7 @@ import Faq from '@/pages/faq';
 import Contact from '@/pages/contact';
 import Privacy from '@/pages/privacy';
 import Terms from '@/pages/terms';
+import { StickyMobileCTA } from '@/components/StickyMobileCTA';
 
 const queryClient = new QueryClient();
 
@@ -38,6 +39,7 @@ function App() {
       <TooltipProvider>
         <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, '')}>
           <Router />
+          <StickyMobileCTA />
         </WouterRouter>
         <Toaster />
       </TooltipProvider>
