@@ -65,7 +65,7 @@ export default function Home() {
               loop
               playsInline
               className="w-full h-full object-cover scale-110"
-              poster="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=1920&h=1080&fit=crop"
+              poster="/hero-poster.jpg"
             >
               <source src="/assunta-hero.mp4" type="video/mp4" />
               {/* Fallback to poster image if video unsupported */}
