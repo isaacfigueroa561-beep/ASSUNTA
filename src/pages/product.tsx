@@ -9,7 +9,7 @@ import { useDocumentMeta } from '@/hooks/use-document-meta';
 import { PageBreadcrumb } from '@/components/PageBreadcrumb';
 
 const highlights = [
-  'Fresh heavy cream, real butter, and aged Parmigiano Reggiano PDO — no shortcuts',
+  'Fresh light cream, real butter, and aged Parmigiano Reggiano PDO — no shortcuts',
   'Ready in minutes: warm gently and toss with any pasta',
   '2 pack, 22oz jars (44oz total)',
   'Available at select Costco locations',
@@ -18,11 +18,11 @@ const highlights = [
 const ingredients = [
   {
     title: 'Parmigiano Reggiano PDO',
-    copy: 'Certified, aged, authentic — the king of Italian cheeses gives the sauce its rich, nutty foundation.',
+    copy: 'Certified and aged — the king of Italian cheeses gives the sauce its rich, nutty foundation.',
   },
   {
     title: 'Fresh Cream',
-    copy: 'Slowly simmered fresh cream creates a velvety texture that clings to every strand of pasta.',
+    copy: 'Fresh cream gives the sauce its velvety texture, clinging to every strand of pasta.',
   },
   {
     title: 'Real Butter',

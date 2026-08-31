@@ -42,7 +42,7 @@ const sections = [
 export default function Privacy() {
   useDocumentMeta(
     'Privacy Policy',
-    'How Assunta collects, uses, and protects your information when you visit this site or use our Contact form.'
+    'How Assunta\'s collects, uses, and protects your information when you visit this site or use our Contact form.'
   );
   return (
     <div className="min-h-[100dvh] flex flex-col">

@@ -15,7 +15,7 @@ export function Footer() {
               className="h-16 w-auto object-contain opacity-90 brightness-0 invert"
             />
             <p className="text-sm text-primary-foreground/70 font-sans">
-              Preserving Italian heritage, one recipe at a time.
+              Inspired by Italian tradition, made for your table.
             </p>
           </div>
 
