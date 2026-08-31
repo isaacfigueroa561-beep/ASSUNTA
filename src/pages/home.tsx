@@ -86,14 +86,24 @@ export default function Home() {
                 visible: { transition: { staggerChildren: 0.18 } },
               }}
             >
-              <motion.img
-                src="/logo-wordmark.webp"
-                alt="Assunta's"
-                width={320}
-                height={88}
-                className="h-20 sm:h-24 md:h-28 w-auto object-contain mx-auto mb-10 brightness-0 invert"
+              <motion.p
+                className="text-xs sm:text-sm font-sans font-bold uppercase tracking-[0.3em] text-accent-light mb-6"
+                variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } } }}
+              >
+                Authentic Italian Heritage Since 1937
+              </motion.p>
+              <motion.h1
+                className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-serif font-bold text-primary-foreground mb-6 leading-tight"
                 variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } } }}
-              />
+              >
+                La Ricetta di Assunta
+              </motion.h1>
+              <motion.p
+                className="text-lg sm:text-xl md:text-2xl font-sans text-primary-foreground/90 mb-10 max-w-2xl mx-auto"
+                variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } } }}
+              >
+                Since 1937. The sauce that became a legacy.
+              </motion.p>
               <motion.div
                 className="flex flex-col sm:flex-row gap-4 justify-center"
                 variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } } }}
