@@ -2,13 +2,8 @@ import { Link } from 'wouter';
 
 export function Footer() {
   return (
-    <footer className="relative bg-primary border-t border-primary-foreground/10 mt-auto overflow-hidden">
-      <div
-        className="absolute inset-0 opacity-[0.06] pointer-events-none texture-dots"
-        style={{ '--dot-color': 'hsl(40 44% 96%)' } as React.CSSProperties}
-        aria-hidden="true"
-      />
-      <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-12 pb-24 md:pb-12">
+    <footer className="bg-primary border-t border-primary mt-auto">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 pb-24 md:pb-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand */}
           <div className="space-y-4">

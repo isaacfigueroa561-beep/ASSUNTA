@@ -4,7 +4,6 @@ import { Link } from 'wouter';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { Button } from '@/components/ui/button';
-import { SectionDivider } from '@/components/SectionDivider';
 import { useDocumentMeta } from '@/hooks/use-document-meta';
 import { PageBreadcrumb } from '@/components/PageBreadcrumb';
 
@@ -47,17 +46,12 @@ export default function About() {
       <main className="flex-1">
         {/* Hero */}
         <motion.section
-          className="relative py-16 md:py-24 bg-background overflow-hidden"
+          className="py-16 md:py-24 bg-background"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6 }}
         >
-          <div
-            className="absolute inset-0 opacity-[0.05] pointer-events-none texture-dots"
-            style={{ '--dot-color': 'hsl(var(--foreground))' } as React.CSSProperties}
-            aria-hidden="true"
-          />
-          <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <motion.div
               className="text-center mb-12"
               initial={{ opacity: 0, y: 20 }}
@@ -70,7 +64,12 @@ export default function About() {
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-foreground mb-6 leading-tight">
                 The Woman Behind the Sauce
               </h1>
-              <SectionDivider delay={0.5} />
+              <motion.div
+                className="w-24 h-0.5 bg-primary mx-auto"
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ delay: 0.5, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+              />
             </motion.div>
           </div>
         </motion.section>
@@ -81,7 +80,6 @@ export default function About() {
 
             {/* Bologna, 1971 */}
             <FadeInView className="mb-16">
-              <SectionDivider align="left" className="mb-4" />
               <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-6">
                 Bologna, 1937
               </h2>
@@ -99,10 +97,9 @@ export default function About() {
             </FadeInView>
 
             {/* Pull Quote 1 */}
-            <FadeInView delay={0.05} className="my-16 py-4 text-center">
-              <SectionDivider tone="accent" className="mb-10" />
+            <FadeInView delay={0.05} className="my-16 py-12 border-y border-border">
               <motion.blockquote
-                className="text-2xl md:text-3xl font-serif italic text-foreground leading-relaxed"
+                className="text-2xl md:text-3xl font-serif italic text-center text-foreground leading-relaxed"
                 initial={{ opacity: 0, scale: 0.97 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
@@ -110,12 +107,10 @@ export default function About() {
               >
                 "A proper Alfredo cannot be rushed. If you try, you lose the silk of it."
               </motion.blockquote>
-              <SectionDivider tone="accent" className="mt-10" delay={0.2} />
             </FadeInView>
 
             {/* The Standard */}
             <FadeInView className="mb-16">
-              <SectionDivider align="left" className="mb-4" />
               <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-6">
                 The Standard
               </h2>
@@ -135,7 +130,6 @@ export default function About() {
 
             {/* A Legacy Bottled */}
             <FadeInView className="mb-16">
-              <SectionDivider align="left" className="mb-4" />
               <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-6">
                 A Legacy Bottled
               </h2>
@@ -154,7 +148,6 @@ export default function About() {
 
             {/* Today */}
             <FadeInView className="mb-16">
-              <SectionDivider align="left" className="mb-4" />
               <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-6">
                 Today
               </h2>

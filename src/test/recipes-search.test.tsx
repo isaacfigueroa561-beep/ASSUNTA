@@ -31,8 +31,6 @@ vi.mock('framer-motion', () => {
         transition: _t,
         whileHover: _wh,
         whileTap: _wt,
-        whileInView: _wiv,
-        viewport: _vp,
         layout: _l,
         layoutId: _lid,
         variants: _v,
