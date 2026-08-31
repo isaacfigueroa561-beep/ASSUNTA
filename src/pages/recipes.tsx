@@ -6,6 +6,7 @@ import { Footer } from '@/components/Footer';
 import { recipes, Recipe } from '@/data/recipes';
 import { Clock, Users, Search, X } from 'lucide-react';
 import { AnimatedThumbnail } from '@/components/AnimatedThumbnail';
+import { SectionDivider } from '@/components/SectionDivider';
 import { useDocumentMeta } from '@/hooks/use-document-meta';
 import { PageBreadcrumb } from '@/components/PageBreadcrumb';
 
@@ -52,7 +53,7 @@ function RecipeCard({ recipe, index, query, matchedIngredient }: { recipe: Recip
     <motion.article
       ref={ref}
       layout
-      className="group bg-card border border-card-border rounded-sm overflow-hidden shadow-md h-full flex flex-col"
+      className="group relative bg-card border border-card-border rounded-sm overflow-hidden shadow-md h-full flex flex-col"
       initial={{ opacity: 0, y: 24 }}
       animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
       exit={{ opacity: 0, scale: 0.96 }}
@@ -60,6 +61,7 @@ function RecipeCard({ recipe, index, query, matchedIngredient }: { recipe: Recip
       whileHover={{ y: -5, boxShadow: '0 20px 40px hsl(20 15% 15% / 0.12)' }}
       data-testid={`card-recipe-${recipe.slug}`}
     >
+      <span className="card-accent-top" aria-hidden="true" />
       <div className="aspect-video overflow-hidden relative">
         <AnimatedThumbnail images={recipe.images} alt={recipe.title} />
       </div>
@@ -153,12 +155,7 @@ export default function Recipes() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-foreground mb-4">
               Le Ricette
             </h1>
-            <motion.div
-              className="w-24 h-0.5 bg-primary mx-auto mb-5"
-              initial={{ scaleX: 0 }}
-              animate={{ scaleX: 1 }}
-              transition={{ delay: 0.3, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            />
+            <SectionDivider delay={0.3} className="mb-5" />
             <p className="text-base md:text-lg font-sans text-muted-foreground max-w-2xl mx-auto">
               Explore our collection of authentic Italian recipes, each one crafted with tradition and love.
             </p>

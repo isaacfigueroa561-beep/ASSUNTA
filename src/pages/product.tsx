@@ -5,6 +5,7 @@ import { Check } from 'lucide-react';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { Button } from '@/components/ui/button';
+import { SectionDivider } from '@/components/SectionDivider';
 import { useDocumentMeta } from '@/hooks/use-document-meta';
 import { PageBreadcrumb } from '@/components/PageBreadcrumb';
 
@@ -76,12 +77,8 @@ export default function Product() {
         <section className="relative overflow-hidden bg-primary py-20 md:py-28 px-4">
           {/* Subtle linen/dot texture so the dark band doesn't read flat */}
           <div
-            className="absolute inset-0 opacity-[0.07] pointer-events-none"
-            style={{
-              backgroundImage:
-                'radial-gradient(circle, hsl(40 44% 96%) 1px, transparent 1px)',
-              backgroundSize: '22px 22px',
-            }}
+            className="absolute inset-0 opacity-[0.07] pointer-events-none texture-dots"
+            style={{ '--dot-color': 'hsl(40 44% 96%)' } as React.CSSProperties}
             aria-hidden="true"
           />
           <div
@@ -317,7 +314,7 @@ export default function Product() {
                   transition={{ duration: 0.6, delay: i * 0.12 }}
                   className="text-center px-4"
                 >
-                  <div className="w-10 h-px bg-primary/50 mx-auto mb-6" aria-hidden="true" />
+                  <SectionDivider className="mb-6" delay={i * 0.12} />
                   <h3 className="text-2xl font-serif font-bold text-foreground mb-4">{title}</h3>
                   <p className="font-sans text-muted-foreground leading-relaxed">{copy}</p>
                 </motion.div>

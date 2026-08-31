@@ -435,4 +435,28 @@
   .recipe-card-link:hover::before {
     transform: translateX(0);
   }
+
+  /* Subtle dot texture so flat color bands (footer, hero panels) don't read
+     as flat digital color. Pass --dot-color inline per background. */
+  .texture-dots {
+    background-image: radial-gradient(circle, var(--dot-color, currentColor) 1px, transparent 1px);
+    background-size: 22px 22px;
+  }
+
+  /* Gold accent bar that sweeps in on card hover, mirroring .recipe-card-link's
+     bottom-line reveal at the top of the card. */
+  .card-accent-top {
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 3px;
+    background-color: hsl(var(--accent));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+    z-index: 1;
+  }
+
+  .group:hover .card-accent-top {
+    transform: scaleX(1);
+  }
 }

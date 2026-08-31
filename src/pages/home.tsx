@@ -7,6 +7,7 @@ import { Footer } from '@/components/Footer';
 import { recipes } from '@/data/recipes';
 import { Button } from '@/components/ui/button';
 import { AnimatedThumbnail } from '@/components/AnimatedThumbnail';
+import { SectionDivider } from '@/components/SectionDivider';
 import { useDocumentMeta } from '@/hooks/use-document-meta';
 
 // Reusable scroll-reveal wrapper
@@ -72,6 +73,12 @@ export default function Home() {
             </video>
             <div className="absolute inset-0 bg-primary/62" />
           </motion.div>
+
+          {/* Soft fade into the section below instead of a hard color cut */}
+          <div
+            className="absolute inset-x-0 bottom-0 h-24 md:h-32 bg-gradient-to-b from-transparent to-background pointer-events-none z-[1]"
+            aria-hidden="true"
+          />
 
           {/* Hero text with stagger */}
           <motion.div
@@ -152,18 +159,19 @@ export default function Home() {
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-foreground mb-4">
                 A Taste of Heritage
               </h2>
-              <div className="w-24 h-0.5 bg-primary mx-auto" />
+              <SectionDivider />
             </FadeInView>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {featuredRecipes.map((recipe, index) => (
                 <FadeInView key={recipe.id} delay={index * 0.12} className="h-full">
                   <motion.article
-                    className="group bg-card border border-card-border rounded-sm overflow-hidden shadow-md h-full flex flex-col"
+                    className="group relative bg-card border border-card-border rounded-sm overflow-hidden shadow-md h-full flex flex-col"
                     whileHover={{ y: -6, boxShadow: '0 20px 40px hsl(20 15% 15% / 0.12)' }}
                     transition={{ duration: 0.3, ease: 'easeOut' }}
                     data-testid={`card-recipe-${recipe.slug}`}
                   >
+                    <span className="card-accent-top" aria-hidden="true" />
                     <div className="aspect-video overflow-hidden relative">
                       <AnimatedThumbnail images={recipe.images} alt={recipe.title} />
                     </div>
@@ -209,7 +217,7 @@ export default function Home() {
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-foreground mb-4">
                 The Assunta Difference
               </h2>
-              <div className="w-24 h-0.5 bg-primary mx-auto" />
+              <SectionDivider />
             </FadeInView>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
@@ -244,25 +252,13 @@ export default function Home() {
         <section className="py-24 md:py-36 bg-background overflow-hidden">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <FadeInView y={20} className="max-w-4xl mx-auto text-center">
-              <motion.div
-                initial={{ scaleX: 0 }}
-                whileInView={{ scaleX: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                className="w-16 h-0.5 bg-accent mx-auto mb-10 origin-center"
-              />
+              <SectionDivider tone="accent" className="mb-10" />
               <blockquote className="text-2xl md:text-3xl lg:text-4xl font-serif italic text-foreground leading-relaxed">
                 "She cooked with patience and love.
                 <br />
                 That was the secret."
               </blockquote>
-              <motion.div
-                initial={{ scaleX: 0 }}
-                whileInView={{ scaleX: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-                className="w-16 h-0.5 bg-accent mx-auto mt-10 origin-center"
-              />
+              <SectionDivider tone="accent" className="mt-10" delay={0.2} />
             </FadeInView>
           </div>
         </section>
