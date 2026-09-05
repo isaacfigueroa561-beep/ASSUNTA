@@ -80,16 +80,29 @@ export default function About() {
 
             {/* Story */}
             <FadeInView className="mb-16">
-              <div className="prose prose-lg max-w-none">
-                <p className="text-base md:text-lg font-sans text-foreground leading-relaxed mb-4">
-                  Assunta Cantisano started with a conviction that has outlasted her: that a pasta sauce should taste like someone cared.
-                </p>
-                <p className="text-base md:text-lg font-sans text-foreground leading-relaxed mb-4">
-                  She built her name on sauces made from good ingredients and honest recipes — no shortcuts, no apologies. That standard is what we inherited.
-                </p>
-                <p className="text-base md:text-lg font-sans text-foreground leading-relaxed">
-                  Assunta's Alfredo is our answer to it. Inspired by her, by generations of home cooking, and by the belief that the best pasta sauces in the world are still worth chasing.
-                </p>
+              <div className="grid grid-cols-1 sm:grid-cols-[180px_1fr] gap-8 sm:gap-10 items-start">
+                <motion.img
+                  src="/jar-cutout-new.webp"
+                  alt="Assunta's Creamy Alfredo jar"
+                  width={460}
+                  height={967}
+                  className="w-32 sm:w-full h-auto mx-auto drop-shadow-[0_20px_25px_rgba(0,0,0,0.25)]"
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                />
+                <div className="prose prose-lg max-w-none">
+                  <p className="text-base md:text-lg font-sans text-foreground leading-relaxed mb-4">
+                    Assunta Cantisano started with a conviction that has outlasted her: that a pasta sauce should taste like someone cared.
+                  </p>
+                  <p className="text-base md:text-lg font-sans text-foreground leading-relaxed mb-4">
+                    She built her name on sauces made from good ingredients and honest recipes, no shortcuts, no apologies. That standard is what we inherited.
+                  </p>
+                  <p className="text-base md:text-lg font-sans text-foreground leading-relaxed">
+                    Assunta's Alfredo is our answer to it. Inspired by her, by generations of home cooking, and by the belief that the best pasta sauces in the world are still worth chasing.
+                  </p>
+                </div>
               </div>
             </FadeInView>
 

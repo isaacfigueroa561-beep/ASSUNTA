@@ -24,7 +24,7 @@ export default function NotFound() {
           </h1>
           <p className="text-base md:text-lg font-sans text-muted-foreground mb-10">
             We couldn't find what you're looking for. It may have moved, or the link
-            might be off — but there's plenty more to taste.
+            might be off, but there's plenty more to taste.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button

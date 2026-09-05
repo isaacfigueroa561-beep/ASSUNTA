@@ -9,7 +9,7 @@ import { useDocumentMeta } from '@/hooks/use-document-meta';
 import { PageBreadcrumb } from '@/components/PageBreadcrumb';
 
 const highlights = [
-  'Fresh light cream, real butter, and aged Parmigiano Reggiano PDO — no shortcuts',
+  'Fresh light cream, real butter, and aged Parmigiano Reggiano PDO, no shortcuts',
   'Ready in minutes: warm gently and toss with any pasta',
   '2 pack, 22oz jars (44oz total)',
   'Available at select Costco locations',
@@ -18,7 +18,7 @@ const highlights = [
 const ingredients = [
   {
     title: 'Parmigiano Reggiano PDO',
-    copy: 'Certified and aged — the king of cheeses gives the sauce its rich, nutty foundation.',
+    copy: 'Certified and aged: the king of cheeses gives the sauce its rich, nutty foundation.',
   },
   {
     title: 'Fresh Cream',
@@ -97,7 +97,7 @@ export default function Product() {
             >
               <img
                 src="/logo-medallion.webp"
-                alt="Assunta — Since 1937"
+                alt="Assunta, Since 1937"
                 width={64}
                 height={64}
                 className="h-16 w-auto"
@@ -110,7 +110,7 @@ export default function Product() {
                   Creamy Alfredo
                 </h1>
               </div>
-              <p className="text-xl md:text-2xl font-serif text-primary-foreground/90 leading-relaxed">
+              <p className="text-lg md:text-xl font-sans text-primary-foreground/90 leading-relaxed">
                 Each jar begins with the finest quality ingredients, like Parmigiano Reggiano PDO cheese, fresh cream, and real butter, slowly coming together to create a rich, layered taste meant to be savored in every bite.
               </p>
             </motion.div>
@@ -128,10 +128,10 @@ export default function Product() {
                 <div className="w-72 h-72 md:w-80 md:h-80 rounded-full bg-[radial-gradient(circle,hsl(40_44%_96%/0.16)_0%,transparent_70%)]" />
               </div>
               <img
-                src="/jar-front-cutout.webp"
+                src="/jar-cutout-new.webp"
                 alt="Assunta's Creamy Alfredo jar"
-                width={224}
-                height={320}
+                width={460}
+                height={967}
                 className="relative w-48 md:w-60 h-auto drop-shadow-[0_40px_45px_rgba(0,0,0,0.5)]"
                 data-testid="img-product-brand-jar"
               />
@@ -164,7 +164,7 @@ export default function Product() {
               />
               <img
                 src="/jar-2pack-back-v3.png"
-                alt="Assunta's Creamy Alfredo, 2-pack — back label with nutrition facts"
+                alt="Assunta's Creamy Alfredo, 2-pack: back label with nutrition facts"
                 width={1736}
                 height={1371}
                 className="h-72 md:h-80 w-auto max-w-full"
@@ -178,16 +178,16 @@ export default function Product() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1 }}
             >
-              <div className="flex items-center gap-2 mb-4">
+              <div className="flex items-center gap-3 mb-5">
                 <img
                   src="/logo-medallion.webp"
                   alt=""
-                  width={28}
-                  height={28}
-                  className="h-7 w-auto"
+                  width={44}
+                  height={44}
+                  className="h-11 w-auto"
                   aria-hidden="true"
                 />
-                <span className="text-sm font-sans font-semibold text-primary">Assunta's</span>
+                <span className="text-lg font-sans font-semibold text-primary">Assunta's</span>
               </div>
 
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-foreground leading-tight mb-2">
@@ -206,7 +206,7 @@ export default function Product() {
                 ))}
               </ul>
 
-              <div className="max-w-[280px]">
+              <div className="max-w-[280px] mx-auto md:mx-0">
                 <div className="flex border-b border-border mb-4" role="tablist" aria-label="Product information">
                   {infoTabs.map((tab) => (
                     <button

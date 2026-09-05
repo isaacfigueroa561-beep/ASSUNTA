@@ -15,8 +15,8 @@ const sections = [
   {
     title: 'Information We Collect',
     body: [
-      'This website does not have any forms, accounts, or checkout — we do not collect your name, email address, or any other personal information through this site.',
-      'We do not use analytics or advertising tracking cookies on this site. We do use Marker.io, a third-party feedback tool, which may collect basic technical diagnostic information (such as browser type and screen size) — this is used only by our team to review and improve the site, not for advertising or tracking visitors.',
+      'This website does not have any forms, accounts, or checkout. We do not collect your name, email address, or any other personal information through this site.',
+      'We do not use analytics or advertising tracking cookies on this site. We do use Marker.io, a third-party feedback tool, which may collect basic technical diagnostic information (such as browser type and screen size). This is used only by our team to review and improve the site, not for advertising or tracking visitors.',
     ],
   },
   {

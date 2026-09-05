@@ -73,66 +73,112 @@ export default function Home() {
             <div className="absolute inset-0 bg-primary/62" />
           </motion.div>
 
-          {/* Hero text with stagger */}
+          {/* Logo — the centered focal point of the hero */}
           <motion.div
             className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center"
             style={{ opacity: heroOpacity }}
           >
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              variants={{
-                hidden: {},
-                visible: { transition: { staggerChildren: 0.18 } },
-              }}
-            >
-              <motion.img
-                src="/logo-wordmark.webp"
-                alt="Assunta's"
-                width={320}
-                height={88}
-                className="h-28 sm:h-32 md:h-40 w-auto object-contain mx-auto mb-10 brightness-0 invert"
-                variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } } }}
-              />
-              <motion.div
-                className="flex flex-col sm:flex-row gap-4 justify-center"
-                variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } } }}
-              >
-                <Button
-                  asChild
-                  size="lg"
-                  className="bg-accent text-accent-foreground hover:bg-accent/90 font-sans font-bold text-base"
-                  data-testid="button-explore-recipes"
-                >
-                  <Link href="/recipes">Explore Recipes</Link>
-                </Button>
-                <Button
-                  asChild
-                  size="lg"
-                  variant="outline"
-                  className="bg-primary-foreground/10 text-primary-foreground border-primary-foreground/30 hover:bg-primary-foreground/20 font-sans font-bold text-base backdrop-blur-sm"
-                  data-testid="button-our-story"
-                >
-                  <Link href="/about">Our Story</Link>
-                </Button>
-              </motion.div>
-            </motion.div>
-          </motion.div>
-
-          {/* Scroll indicator */}
-          <motion.div
-            className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.4, duration: 0.6 }}
-          >
-            <span className="text-xs font-sans uppercase tracking-widest text-primary-foreground/60">Scroll</span>
-            <motion.div
-              className="w-px h-12 bg-primary-foreground/40 origin-top"
-              animate={{ scaleY: [1, 0.3, 1] }}
-              transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
+            <motion.img
+              src="/logo-wordmark.webp"
+              alt="Assunta's"
+              width={320}
+              height={88}
+              className="h-40 sm:h-52 md:h-64 w-auto object-contain mx-auto brightness-0 invert"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
             />
           </motion.div>
+
+          {/* Buttons + scroll indicator — a smaller subtitle group anchored near the bottom */}
+          <motion.div
+            className="absolute bottom-10 md:bottom-14 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-6 w-full px-4"
+            style={{ opacity: heroOpacity }}
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: {},
+              visible: { transition: { staggerChildren: 0.18, delayChildren: 0.4 } },
+            }}
+          >
+            <motion.div
+              className="flex flex-col sm:flex-row gap-4 justify-center"
+              variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } } }}
+            >
+              <Button
+                asChild
+                size="lg"
+                className="bg-accent text-accent-foreground hover:bg-accent/90 font-sans font-bold text-base"
+                data-testid="button-explore-recipes"
+              >
+                <Link href="/recipes">Explore Recipes</Link>
+              </Button>
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="bg-primary-foreground/10 text-primary-foreground border-primary-foreground/30 hover:bg-primary-foreground/20 font-sans font-bold text-base backdrop-blur-sm"
+                data-testid="button-our-story"
+              >
+                <Link href="/about">Our Story</Link>
+              </Button>
+            </motion.div>
+
+            <motion.div
+              className="flex flex-col items-center gap-2"
+              variants={{ hidden: { opacity: 0 }, visible: { opacity: 1, transition: { duration: 0.6 } } }}
+            >
+              <span className="text-xs font-sans uppercase tracking-widest text-primary-foreground/60">Scroll</span>
+              <motion.div
+                className="w-px h-12 bg-primary-foreground/40 origin-top"
+                animate={{ scaleY: [1, 0.3, 1] }}
+                transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
+              />
+            </motion.div>
+          </motion.div>
+        </section>
+
+        {/* ── Product Spotlight ── */}
+        {/* Client feedback: the product wasn't legible above the fold. This
+            band sits immediately below the hero so the name and dish are
+            unmissable, without touching the hero pour shot itself. The photo
+            fades into the page background at the bottom instead of cutting
+            off with a hard edge. */}
+        <section className="relative min-h-[68vh] md:min-h-[82vh] flex items-center overflow-hidden">
+          <div className="absolute inset-0" aria-hidden="true">
+            <img
+              src="/shrimp-alfredo-hero.jpg"
+              alt=""
+              className="w-full h-full object-cover"
+            />
+            {/* Light, even tint — just enough for text contrast without
+                muddying the photo. A separate scrim (below) does the work
+                of grounding the text instead of dimming the whole image. */}
+            <div className="absolute inset-0 bg-primary/25" />
+            <div className="absolute inset-0 bg-gradient-to-t from-primary/75 via-primary/10 to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 h-40 md:h-56 bg-gradient-to-b from-transparent to-background" />
+          </div>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative w-full">
+            <FadeInView className="text-center max-w-2xl mx-auto">
+              <p className="text-xs font-sans font-bold uppercase tracking-[0.3em] text-accent-light mb-3">
+                Super-Premium Alfredo
+              </p>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-primary-foreground mb-4">
+                Assunta's Creamy Alfredo
+              </h2>
+              <p className="text-primary-foreground/90 font-sans mb-6 max-w-xl mx-auto">
+                Fresh cream, aged Parmigiano Reggiano, and real butter.
+              </p>
+              <Button
+                asChild
+                size="lg"
+                className="bg-accent text-accent-foreground hover:bg-accent/90 font-sans font-bold"
+                data-testid="button-home-see-product"
+              >
+                <Link href="/product">See the Product</Link>
+              </Button>
+            </FadeInView>
+          </div>
         </section>
 
         {/* ── Featured Recipes ── */}
@@ -145,7 +191,14 @@ export default function Home() {
               <div className="w-24 h-0.5 bg-primary mx-auto" />
             </FadeInView>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Center the grid and cap it at 2 columns when there are fewer
+                than 3 featured recipes (e.g. the hero recipe slot is still
+                pending), so cards don't leave a dangling empty column. */}
+            <div
+              className={`grid grid-cols-1 sm:grid-cols-2 gap-8 mx-auto ${
+                featuredRecipes.length < 3 ? 'max-w-3xl' : 'md:grid-cols-3 max-w-none'
+              }`}
+            >
               {featuredRecipes.map((recipe, index) => (
                 <FadeInView key={recipe.id} delay={index * 0.12} className="h-full">
                   <motion.article
@@ -204,7 +257,7 @@ export default function Home() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
               {[
-                { icon: Heart, title: 'Inspired by Assunta', body: 'Assunta Cantisano believed a great sauce was worth doing properly. Our alfredo is made in that spirit — simple ingredients, treated with respect.' },
+                { icon: Heart, title: 'Inspired by Assunta', body: 'Assunta Cantisano believed a great sauce was worth doing properly. Our alfredo is made in that spirit: simple ingredients, treated with respect.' },
                 { icon: Users, title: 'In the Classic Tradition', body: 'Inspired by generations of home cooking, where a sauce is judged by what you leave out as much as what you put in.' },
                 { icon: Timer, title: 'Made for the Table', body: 'Rich, balanced, and ready in the time it takes to boil pasta. Built for a real weeknight, good enough for a Sunday.' },
               ].map(({ icon: Icon, title, body }, i) => (

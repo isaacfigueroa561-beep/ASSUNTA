@@ -9,7 +9,7 @@ export function Footer() {
           <div className="space-y-4">
             <img
               src="/logo-medallion.webp"
-              alt="Assunta — Since 1937"
+              alt="Assunta, Since 1937"
               width={64}
               height={64}
               className="h-16 w-auto object-contain opacity-90 brightness-0 invert"

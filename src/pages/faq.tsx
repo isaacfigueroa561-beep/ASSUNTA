@@ -27,7 +27,7 @@ const faqs = [
 export default function Faq() {
   useDocumentMeta(
     'FAQ',
-    'Everything you need to know about Assunta\'s Creamy Alfredo — where to buy, ingredients, storage, and allergens.'
+    'Everything you need to know about Assunta\'s Creamy Alfredo: where to buy, ingredients, storage, and allergens.'
   );
   return (
     <div className="min-h-[100dvh] flex flex-col">
@@ -77,7 +77,7 @@ export default function Faq() {
           >
             <img
               src="/logo-medallion.webp"
-              alt="Assunta — Since 1937"
+              alt="Assunta, Since 1937"
               width={64}
               height={64}
               className="h-16 w-auto mx-auto mb-4 opacity-90"
@@ -86,7 +86,7 @@ export default function Faq() {
               Still have questions?
             </h4>
             <p className="font-sans text-muted-foreground">
-              We'd love to hear from you — reach out through the{' '}
+              We'd love to hear from you. Reach out through the{' '}
               <Link href="/contact" className="text-primary underline underline-offset-4 hover:text-primary/80">
                 Contact page
               </Link>

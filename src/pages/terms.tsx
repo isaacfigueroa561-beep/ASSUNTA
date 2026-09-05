@@ -15,7 +15,7 @@ const sections = [
   {
     title: 'Use of This Website',
     body: [
-      'This site and its content — including recipes, images, and text — are made available for your personal, non-commercial use. You may not reproduce, distribute, or republish content from this site without our prior written permission.',
+      'This site and its content, including recipes, images, and text, are made available for your personal, non-commercial use. You may not reproduce, distribute, or republish content from this site without our prior written permission.',
     ],
   },
   {
@@ -28,13 +28,13 @@ const sections = [
     title: 'Recipes & Content Disclaimer',
     body: [
       'Recipes and cooking instructions on this site are provided for informational and inspirational purposes only. They are not professional dietary, nutritional, or medical advice.',
-      'If you have food allergies or dietary restrictions, always check ingredient labels and confirm allergen information directly with the product packaging before consuming — allergen and ingredient details on this site may not reflect the most current formulation.',
+      'If you have food allergies or dietary restrictions, always check ingredient labels and confirm allergen information directly with the product packaging before consuming. Allergen and ingredient details on this site may not reflect the most current formulation.',
     ],
   },
   {
     title: 'Product Availability',
     body: [
-      'Assunta\'s Creamy Alfredo is sold through Costco. Availability, pricing, and locations are determined by Costco and may change without notice — this website does not process orders or sell products directly.',
+      'Assunta\'s Creamy Alfredo is sold through Costco. Availability, pricing, and locations are determined by Costco and may change without notice. This website does not process orders or sell products directly.',
     ],
   },
   {

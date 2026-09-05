@@ -105,7 +105,7 @@ function RecipeCard({ recipe, index, query, matchedIngredient }: { recipe: Recip
 export default function Recipes() {
   useDocumentMeta(
     'Recipes',
-    'Recipes crafted around Assunta\'s Creamy Alfredo — from the classic fettuccine to baked chicken alfredo.'
+    'Recipes crafted around Assunta\'s Creamy Alfredo: from creamy shrimp to a classic fettuccine and a baked Florentine lasagna.'
   );
   const [selectedCategory, setSelectedCategory] = useState<Category>('all');
   const [searchQuery, setSearchQuery] = useState('');
